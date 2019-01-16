@@ -1,0 +1,30 @@
+
+.game-counter {
+
+  #hidden-button{
+      height: 100%;
+      width: 100%;
+      box-shadow: none;
+      -webkit-box-shadow: none;
+  }
+
+  .counter-value {
+    position: absolute;
+    top: 50%;
+    font-size:4.0em;
+    font-weight: bold;
+    color: #fff; 
+    text-align: center;
+    vertical-align: middle;
+    height: 100%;
+    width: 100%;
+  }
+
+  ion-grid {
+    height: 100%;
+  }
+
+  ion-row {
+    height: 100%;
+  }
+}

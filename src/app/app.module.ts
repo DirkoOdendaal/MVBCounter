@@ -1,34 +1,47 @@
+import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-
-import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+import { IonicStorageModule } from '@ionic/storage';
+import { Insomnia } from '@ionic-native/insomnia';
+import { IonicModule, IonicErrorHandler, IonicApp } from 'ionic-angular';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { AppComponent } from './app.component';
+
+import { GameCountComponent } from '../pages/game-count/game-count.component';
+import { SettingsComponent } from '../pages/settings/settings.component';
+import { HistoryComponent } from '../pages/history/history.component';
+
+import { StorageManagement } from '../providers/storage-management'
+
 @NgModule({
   declarations: [
-    MyApp,
-    HomePage,
-    ListPage
+    AppComponent,
+    GameCountComponent,
+    SettingsComponent,
+    HistoryComponent
+  ],
+  entryComponents: [
+    AppComponent,
+    GameCountComponent,
+    SettingsComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
-  ],
-  bootstrap: [IonicApp],
-  entryComponents: [
-    MyApp,
-    HomePage,
-    ListPage
+    IonicModule.forRoot(AppComponent, {
+      preloadModules: true
+    }),
+    IonicStorageModule.forRoot()
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
-  ]
+    StorageManagement,
+    Insomnia,
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
+  ],
+  bootstrap: [IonicApp]
 })
-export class AppModule {}
+export class AppModule { }

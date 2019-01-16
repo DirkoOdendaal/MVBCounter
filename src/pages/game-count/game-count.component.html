@@ -1,0 +1,25 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title text-center>Counter</ion-title>
+
+        <button ion-button menuToggle icon-only left>
+            <ion-icon name='menu'></ion-icon>
+        </button>
+
+        <ion-buttons end>
+            <button ion-button right (click)="saveCount()">
+                Done
+            </button>
+        </ion-buttons>
+
+    </ion-toolbar>
+</ion-header>
+<ion-content class="outer-content game-counter" click="count()">
+    <ion-grid>
+        <button id='hidden-button' text-center ion-button (click)="count()">
+            <div class="counter-value">
+                {{counterValue}}
+            </div>
+        </button>
+    </ion-grid>
+</ion-content>

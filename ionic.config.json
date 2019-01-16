@@ -1,8 +1,8 @@
 {
-  "name": "MVBCounter",
+  "name": "MVB Counter",
   "integrations": {
     "cordova": {}
   },
   "type": "ionic-angular",
-  "id": "25d391b2"
+  "id": "c63a8213"
 }

@@ -1,0 +1,19 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title text-center>History</ion-title>
+
+        <button ion-button menuToggle icon-only left>
+            <ion-icon name='menu'></ion-icon>
+        </button>
+
+    </ion-toolbar>
+</ion-header>
+<ion-content class="outer-content">
+    <ion-list *ngIf="historyRecords?.length > 0">
+        <ion-item *ngFor="let record of historyRecords">
+            <h3>Count:  {{record.count_value}}</h3>
+            <h3>Date:    {{record.count_date_time | date: 'medium'}}</h3>
+        </ion-item>      
+    </ion-list>
+    <h5 text-center *ngIf="!historyRecords?.length > 0">No counts available</h5>
+</ion-content>

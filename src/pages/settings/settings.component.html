@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title text-center>Settings</ion-title>
+
+        <button ion-button menuToggle icon-only left>
+            <ion-icon name='menu'></ion-icon>
+        </button>
+    </ion-toolbar>
+
+</ion-header>
+<ion-content class="settings-content">
+    <ion-card>
+        <div text-center>
+            <ion-img text-center class="card-logo" src="/assets/imgs/MVB-logo.png"></ion-img>
+        </div>
+        <ion-card-header>
+            <ion-card-title>MVB Feeders</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <p>These are the settings used for counter.</p>
+            <form [formGroup]="settingsForm">
+                <ion-item>
+                    <ion-label floating>Counter increments</ion-label>
+                    <ion-select formControlName="counterNumber" ok-text="Okay" cancel-text="Dismiss">
+                            <ion-option value="1">1</ion-option>
+                            <ion-option value="2">2</ion-option>
+                            <ion-option value="3">3</ion-option>
+                            <ion-option value="4">4</ion-option>
+                            <ion-option value="5">5</ion-option>
+                          </ion-select>
+                </ion-item>
+
+                <br>
+                <button full ion-button color="danger" (click)="doConfirm()">Clear history</button>
+            </form>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

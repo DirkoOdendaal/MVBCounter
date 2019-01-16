@@ -1,0 +1,21 @@
+<ion-menu side="left" role="navigation" type="reveal" id="menu1" [content]="mycontent">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <button ion-item (click)="openPage('GameCounter')">
+        Counter
+      </button>
+      <button ion-item (click)="openPage('Settings')">
+        Settings
+      </button>
+      <button ion-item (click)="openPage('History')">
+        History
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-nav #mycontent [root]="rootPage"></ion-nav>
