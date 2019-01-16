@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="39THJ3L9V7.com.counterapp.app" version="0.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>MVBCounter</name>
+    <description>MVB Feeders sheep counter app.</description>
+    <author email="dirkoooden@gmail.com" href="http://ionicframework.com/">Dirko Odendaal</author>
+    <content src="index.html" />
+    <access origin="*" />
+    <engine name="ios" spec="^4.5.5" />
+</widget>
