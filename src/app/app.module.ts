@@ -33,7 +33,10 @@ import { StorageManagement } from '../providers/storage-management'
     IonicModule.forRoot(AppComponent, {
       preloadModules: true
     }),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot({
+      name: '__mydb',
+      driverOrder: ['indexeddb', 'sqlite', 'websql']
+    })
   ],
   providers: [
     StatusBar,
