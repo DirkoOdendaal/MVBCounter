@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Storage } from '@ionic/storage';
+import { NativeStorage } from '@ionic-native/native-storage';
 import { Data, Record } from '../models';
 
 const STORAGE_KEY = 'countHistory';
@@ -7,7 +7,7 @@ const STORAGE_KEY = 'countHistory';
 @Injectable()
 export class StorageManagement {
   public dataStore: Data;
-  constructor(private storage: Storage) {
+  constructor(private nativeStorage: NativeStorage) {
 
     // storage.set(STORAGE_KEY, 'Max');
 
@@ -28,7 +28,7 @@ export class StorageManagement {
   }
 
   async getData() : Promise<Data> {
-    return this.storage.get(STORAGE_KEY).then((data) => {
+    return this.nativeStorage.getItem(STORAGE_KEY).then((data) => {
       console.log('getting data');
       console.log(data);
       return data;
@@ -36,7 +36,7 @@ export class StorageManagement {
   }
 
   setData() {
-    this.storage.set(STORAGE_KEY, this.dataStore).then((successData) => {
+    this.nativeStorage.setItem(STORAGE_KEY, this.dataStore).then((successData) => {
       console.log("Data Stored");
       console.log(successData);
     });

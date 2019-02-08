@@ -1,6 +1,6 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { IonicStorageModule } from '@ionic/storage';
+import { NativeStorage } from '@ionic-native/native-storage';
 import { Insomnia } from '@ionic-native/insomnia';
 import { IonicModule, IonicErrorHandler, IonicApp } from 'ionic-angular';
 
@@ -32,17 +32,14 @@ import { StorageManagement } from '../providers/storage-management'
     BrowserModule,
     IonicModule.forRoot(AppComponent, {
       preloadModules: true
-    }),
-    IonicStorageModule.forRoot({
-      name: '__mydb',
-      driverOrder: ['indexeddb', 'sqlite', 'websql']
-    })
+    })    
   ],
   providers: [
     StatusBar,
     SplashScreen,
     StorageManagement,
     Insomnia,
+    NativeStorage,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ],
   bootstrap: [IonicApp]
