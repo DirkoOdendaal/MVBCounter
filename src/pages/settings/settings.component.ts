@@ -39,10 +39,7 @@ export class SettingsComponent {
         });
 
         this.insomnia.allowSleepAgain()
-            .then(
-                () => console.log('success'),
-                () => console.log('error')
-            );
+            .then();
     }
 
     openPage(page: any) {
@@ -57,13 +54,11 @@ export class SettingsComponent {
                 {
                     text: 'No',
                     handler: () => {
-                        console.log('No clicked');
                     }
                 },
                 {
                     text: 'Yes',
                     handler: () => {
-                        console.log('Yes clicked');
                         this.storage.clearCountHistory();
                     }
                 }

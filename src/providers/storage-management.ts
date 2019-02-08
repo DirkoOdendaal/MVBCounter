@@ -9,8 +9,6 @@ export class StorageManagement {
   public dataStore: Data;
   constructor(private nativeStorage: NativeStorage) {
 
-    // storage.set(STORAGE_KEY, 'Max');
-
     let data: Data = {
       counter_increment: 1,
       count_history: []
@@ -19,8 +17,6 @@ export class StorageManagement {
     this.dataStore = data;
     this.getData().then(result => {
       if (!result) {
-        console.log('get data');
-        console.log(result);
         this.setData();
       }
     });
@@ -29,17 +25,12 @@ export class StorageManagement {
 
   async getData() : Promise<Data> {
     return this.nativeStorage.getItem(STORAGE_KEY).then((data) => {
-      console.log('getting data');
-      console.log(data);
       return data;
     })
   }
 
   setData() {
-    this.nativeStorage.setItem(STORAGE_KEY, this.dataStore).then((successData) => {
-      console.log("Data Stored");
-      console.log(successData);
-    });
+    this.nativeStorage.setItem(STORAGE_KEY, this.dataStore).then();
   }
 
   setCountIncrement(counterIncrement: number) {

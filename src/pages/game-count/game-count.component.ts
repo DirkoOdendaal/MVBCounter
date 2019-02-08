@@ -23,18 +23,11 @@ export class GameCountComponent {
         });
 
         this.insomnia.keepAwake()
-            .then(
-                () => console.log('success'),
-                () => console.log('error')
-            );
+            .then();
     }
 
     count() {
         this.counterValue = this.counterValue + this.addValue;
-    }
-
-    onChange(ev: any) {
-        console.log('Changed', ev);
     }
 
     openPage(page: any) {

@@ -16,18 +16,13 @@ export class HistoryComponent {
         menu.enable(true);
 
         this.storage.getData().then(result => {
-            console.log('result vals');
-            console.log(result);
             if (result) {
                 this.historyRecords = result.count_history;
             }
         });
 
         this.insomnia.allowSleepAgain()
-            .then(
-                () => console.log('success'),
-                () => console.log('error')
-            );
+            .then();
     }
 
 }
