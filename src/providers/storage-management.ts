@@ -9,7 +9,7 @@ export class StorageManagement {
   public dataStore: Data;
   constructor(private storage: Storage) {
 
-    storage.set(STORAGE_KEY, 'Max');
+    // storage.set(STORAGE_KEY, 'Max');
 
     let data: Data = {
       counter_increment: 1,
@@ -19,14 +19,18 @@ export class StorageManagement {
     this.dataStore = data;
     this.getData().then(result => {
       if (!result) {
+        console.log('get data');
+        console.log(result);
         this.setData();
       }
     });
 
   }
 
-  getData() : Promise<Data> {
+  async getData() : Promise<Data> {
     return this.storage.get(STORAGE_KEY).then((data) => {
+      console.log('getting data');
+      console.log(data);
       return data;
     })
   }

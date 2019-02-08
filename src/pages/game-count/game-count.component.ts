@@ -17,7 +17,7 @@ export class GameCountComponent {
         menu.enable(true);
 
         this.storage.getData().then(result => {
-            if (result) {
+            if (result && result.counter_increment) {
                 this.addValue = +result.counter_increment;
             }
         });
